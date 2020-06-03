@@ -1,8 +1,261 @@
+
+
+  
+
+      
+<!DOCTYPE html>
 <html>
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
-  <title>Gabut AI</title>
+<title>Catatan Pemula | Gabut AI </title>
+<script type="text/javascript" src="template/001_sederhana/assets/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+<script type="text/javascript" src="template/001_sederhana/assets/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="template/001_sederhana/assets/syntaxhighlighter_3.0.83/scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="template/001_sederhana/assets/syntaxhighlighter_3.0.83/scripts/shBrushSql.js"></script>
+<script type="text/javascript" src="template/001_sederhana/assets/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+
+<script type="text/javascript" src="template/001_sederhana/assets/syntaxhighlighter_3.0.83/scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="template/001_sederhana/assets/syntaxhighlighter_3.0.83/scripts/shBrushPlain.js"></script>
+<script type="text/javascript" src="template/001_sederhana/assets/syntaxhighlighter_3.0.83/scripts/shBrushBash.js"></script>
+
+<script type="text/javascript" src="template/001_sederhana/assets/syntaxhighlighter_3.0.83/scripts/shBrushCpp.js"></script>
+
+<link type="text/css" rel="stylesheet" href="template/001_sederhana/assets/syntaxhighlighter_3.0.83/styles/shCoreDefault.css"/>
+<link type="text/css" rel="stylesheet" href="template/001_sederhana/assets/syntaxhighlighter_3.0.83/styles/shThemeDefault.css"/>
+<link type="text/css" rel="stylesheet" href="template/001_sederhana/assets/css/style.css"/>
+
+<script type="text/javascript">SyntaxHighlighter.all();</script>
 </head>
 <body>
-Assalamualaikum, <br> halaman utama
+
+
+
+<div class="garis_atas"></div>
+		<div id="kotak">
+								<div id="menu_atas">
+					<ul>
+					  <li><a class="active" href="https://gabutai.github.io/">Home</a></li>
+					  					</ul>
+				</div>								
+				
+				
+								<div id="cari">
+					<form method="POST" action="https://gabutai.github.io/">
+						<input type="hidden" name="seo" value="001-pekernalan-dengan-tensorflow">
+						<input type="hidden" name="menu" value="cari">
+						<input type="text" name="cari" value=""  placeholder="Cari.."> 
+						<input type="submit" name="Go" value="Cari">
+					</form>
+					
+										<div id="tampil_cari">
+						1. <a href="001-pekernalan-dengan-tensorflow.html" title="001. Pekernalan Dengan Tensorflow" >001. Pekernalan Dengan Te ..</a>					</div>
+									</div>				
+				
+				
+
+				<div id='isi' class='isi_detail'> <div id='judul'>001. Pekernalan Dengan Tensorflow</div>
+						<div id='tanggal'>2019-11-22</div>
+				<img class="judulku"  src="gambar_berita/2019-11-22-14.12.54-001-pekernalan-dengan-tensorfl.jpg" height="300px"> 	<BR>Install Python 3.7.4<br><pre class="brush: bash; tab-size: 4" id="tes">
+Python
+Python 3.7.4 (tags/v3.7.4:e09359112e, Jul  8 2019, 20:34:20) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+</pre><br><br>Pastikan Sudah terinstall virual environtment karena akan digunakan dua versi tensorflow<br>versi 2.0 dan versi 1.5.1. Versi 2 digunakan untuk proses pra-training sedangkan versi 1.5.1 digunakan untuk proses training.<br><br><br><br>Install paket yang dibutuhkan<br><pre class="brush: bash; tab-size: 4" id="tes">
+pip install --upgrade tensorflow==1.15
+pip install --upgrade tensorflow==2.0
+pip install tensorboard
+pip install matplotlib  
+pip install lxml  
+pip install Cython  
+pip install pillow  
+pip install jupyter  
+
+pip install pandas 
+pip install opencv-python 
+</pre><br><br>jika terdapat error ditensorflow 2 bisa mencoba perbaiki data di baris ini<br><pre class="brush: bash; tab-size: 4" id="tes">
+AttributeError: module 'tensorflow' has no attribute 'GraphDef'
+
+
+import tensorflow as tf
+menjadi
+import tensorflow.compat.v1 as tf
+
+
+
+AttributeError: module 'tensorflow' has no attribute 'gfile'
+
+utils\label_map_util.py
+
+with tf.io.gfile.GFile(PATH_TO_CKPT, 'rb') as fid:
+#with tf.io.gfile.GFile(PATH_TO_CKPT, 'rb') as fid:
+
+
+
+
+tf.compat.v1.GraphDef()   # -> instead of tf.GraphDef()
+tf.compat.v2.io.gfile.GFile()   # -> instead of tf.gfile.GFile()
+</pre><br><br>Download full TensorFlow object detection repository di alamat ini <br><b>https://github.com/tensorflow/models/releases/tag/v2.0</b><br><br>untuk melihat seluruh releasenya ada di link ini<br><b>https://github.com/tensorflow/models/releases</b><br><br>untuk melihat default reponya ada dilink ini<br><b>https://github.com/tensorflow/models</b><br><br><h4> Ujicoba Object Detection Tensorflow di Jupyter Notebook </h4><br><a href="https://www.youtube.com/watch?v=7hdo7Y30Yiw" target="_blank">https://www.youtube.com/watch?v=7hdo7Y30Yiw</a><br><iframe width="650" height="420" src="https://www.youtube.com/embed/7hdo7Y30Yiw" frameborder="0" allow="encrypted-media" allowfullscreen></iframe><br><br><br>pindah ke directori kerja <br><pre class="brush: bash; tab-size: 4" id="tes">
+jika menggunakan shell
+D:  ; cd 'D:\DATA_APLIKASI\CODING\PYTHON\python3_01\007. working_area'
+jika menggunakan CMD
+D:  & cd D:\DATA_APLIKASI\CODING\PYTHON\python3_01\007. working_area
+</pre><br><br>membuat virtualenv<br><pre class="brush: bash; tab-size: 4" id="tes">
+python -m venv c:\path\to\myenv
+
+virtualenv tensorflow_1.15
+virtualenv tensorflow_2.0
+</pre><br><br><img src=gambar/2019-11-22-14.28.06-buat-virtualenv.jpg width=500px class='detailku'><br>Gambar Buat Virtualenv<br><br>pindah ke direkstori tensorflow_1.15 dan aktifkan projectnya<br><pre class="brush: bash; tab-size: 4" id="tes">
+cd tensorflow_1.15 & cd scripts & activate.bat
+cd tensorflow_2.0 & cd scripts & activate.bat
+</pre><br><br><img src=gambar/2019-11-22-14.36.03-masuk-virtualenv-1.jpg width=500px class='detailku'><br>Gambar masuk Virtualenv 1<br><br><br><img src=gambar/2019-11-22-14.35.28-masuk-virtualenv-1.jpg width=500px class='detailku'><br>Gambar masuk Virtualenv 2<br><br>Extract tensorflow yang sudah didownload di folder <b>tensorflow_2.0</b> dan di <b>tensorflow_1.15</b> lalu rename namanya menjadi <u><b>models</b></u><br><br><img src=gambar/2019-11-22-14.50.19-models.jpg width=500px class='detailku'><br>Gambar Models<br><br>Masuk kedirektori objectdetection <br><br><pre class="brush: bash; tab-size: 4" id="tes">
+cd models\research\object_detection
+mkdir data_master & mkdir data_file &   mkdir data_uji & cd data_master
+mkdir images &  mkdir inference_graph & mkdir training
+cd images & mkdir train & mkdir test
+</pre><br><br>aktifkan pythonpath di tensorflow 1.15<br>Configure PYTHONPATH environment variable<br><br>PYTHONPATH variable must be created that points to the directories <br>\models<br>\models\research<br>\models\research\slim<br><br>atau <br><pre class="brush: bash; tab-size: 4" id="tes">
+set PYTHONPATH=D:\DATA_APLIKASI\CODING\PYTHON\python3_01\007. working_area\tensorflow_1.15\models;D:\DATA_APLIKASI\CODING\PYTHON\python3_01\007. working_area\tensorflow_1.15\models\research;D:\DATA_APLIKASI\CODING\PYTHON\python3_01\007. working_area\tensorflow_1.15\modelss\research\slim
+echo %PYTHONPATH%
+set PATH=%PATH%;PYTHONPATH
+echo %PATH%
+</pre><br><br>pindah ke directory <u><b>models/research</b></u> lalu complie protobufs<br><br><pre class="brush: bash; tab-size: 4" id="tes">
+ protoc --python_out=. .\object_detection\protos\anchor_generator.proto .\object_detection\protos\argmax_matcher.proto .\object_detection\protos\bipartite_matcher.proto .\object_detection\protos\box_coder.proto .\object_detection\protos\box_predictor.proto .\object_detection\protos\eval.proto .\object_detection\protos\faster_rcnn.proto .\object_detection\protos\faster_rcnn_box_coder.proto .\object_detection\protos\grid_anchor_generator.proto .\object_detection\protos\hyperparams.proto .\object_detection\protos\image_resizer.proto .\object_detection\protos\input_reader.proto .\object_detection\protos\losses.proto .\object_detection\protos\matcher.proto .\object_detection\protos\mean_stddev_box_coder.proto .\object_detection\protos\model.proto .\object_detection\protos\optimizer.proto .\object_detection\protos\pipeline.proto .\object_detection\protos\post_processing.proto .\object_detection\protos\preprocessor.proto .\object_detection\protos\region_similarity_calculator.proto .\object_detection\protos\square_box_coder.proto .\object_detection\protos\ssd.proto .\object_detection\protos\ssd_anchor_generator.proto .\object_detection\protos\string_int_label_map.proto .\object_detection\protos\train.proto .\object_detection\protos\keypoint_box_coder.proto .\object_detection\protos\multiscale_anchor_generator.proto .\object_detection\protos\graph_rewriter.proto
+ </pre><br><pre class="brush: bash; tab-size: 4" id="tes">
+protoc object_detection/protos/*.proto --python_out=.</pre><br><br><br><br>masih di direktori directory <u><b>models/research</b></u> jalankan<br><pre class="brush: bash; tab-size: 4" id="tes">python setup.py build & python setup.py install </pre><br><br><h3>Dijalankan di Tensorflow 2.0</h3><br><br>copy file object_detection_tutorial.ipynb di folder object detection ke folder research<br><pre class="brush: bash; tab-size: 4" id="tes">
+cd  models\research\object_detection
+jupyter notebook object_detection_tutorial.ipynb
+</pre><br><br><br><h4> Pembuatan Dataset dengan 3 Class / 3 Item</h4><br><a href="https://www.youtube.com/watch?v=7hdo7Y30Yiw" target="_blank">https://www.youtube.com/watch?v=O4NxLezwDNo</a><br><iframe width="650" height="420" src="https://www.youtube.com/watch?v=O4NxLezwDNo" frameborder="0" allow="encrypted-media" allowfullscreen></iframe><br><br><br>pisahkan data di folder data_master / images menjadi dua folder train dan test (perbandingan 7:3) 7 untuk training dan 3 untuk test<br>data images dan xml harus satu folder terlihat seperti gambar berikut, <br><br><br><img src=gambar/2020-04-04-15.23.00-data-folder-master.png width=500px class='detailku'><br>Gambar data folder master<br><br>lalu<br><br><img src=gambar/2020-04-04-15.23.15-2-data-folder-master.png width=500px class='detailku'><br>Gambar 2. data folder master<br><br>lalu<br><br><img src=gambar/2020-04-04-15.23.23-3-data-folder-master.png width=500px class='detailku'><br>Gambar 3. data folder master<br><br>pada direkstori <b>models\research\object_detection</b> jalankan<br><pre class="brush: bash; tab-size: 4" id="tes">
+#
+
+python data_file/zzz_xml_to_csv.py
+
+#
+</pre><br><br>edit File data_file/zzz_generate_tfrecord.py lalu sesuaikan jumlah class yang digunakan contoh nya sebagai berikut <br><br><pre class="brush: bash; tab-size: 4" id="tes">
+# TO-DO replace this with label map
+def class_text_to_int(row_label):
+    if row_label == 'namanya_1':
+        return 1
+    elif row_label == 'namanya_2':
+        return 2
+    elif row_label == 'namanya_3':
+        return 3
+    elif row_label == 'namanya_4':
+        return 4
+    else:
+        return 0
+</pre><br><br>pada direkstori <b>models\research\object_detection</b> Lalu jalankan perintah <br><pre class="brush: bash; tab-size: 4" id="tes">
+# 
+
+python data_file/zzz_generate_tfrecord.py --csv_input=data_master\images\train_labels.csv --image_dir=data_master\images\train --output_path=data_master\train.record
+
+python data_file/zzz_generate_tfrecord.py --csv_input=data_master\images\test_labels.csv --image_dir=data_master\images\test --output_path=data_master\test.record
+
+#
+</pre><br><br><br><br><h3>Dijalankan di Tensorflow 1.5</h3><br><br>Download faster_rcnn_inception_v2_coco di alamat berikut<br>https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md<br>extract lalu Copy faster_rcnn_inception_v2_coco_2018_01_28 di directory <b>models\research\object_detection</b> <br><br><h4>Konfigurasi Pendukung Training </h4><br><br>Pada folder data copy file <b>pet_label_map.pbtxt</b> kemudian rename menjadi <b>labelmap.pbtxt</b><br>sesuaikan jumlah <b>class</b> data yang akan digunakan. Contoh penulisan class adalah sebagai berikut.<br><br><pre class="brush: bash; tab-size: 4" id="tes">
+item {
+  id: 1
+  name: 'namanya_1'
+}
+item {
+  id: 2
+  name: 'namanya_2'
+}
+item {
+  id: 3
+  name: 'namanya_3'
+}
+item {
+  id: 4
+  name: 'namanya_4'
+}
+</pre><br><br>letakan file <b>labelmap.pbtxt</b> di folder data_master/training<br><br><br>copy faster_rcnn_inception_v2_pets.config pada direktori <b>models\research\object_detection\samples\configs</b> lalu paste di direktori </b>data_master/training </b><br><br>1. Dibagian <b>model</b> ganti jumalah <b>num_classes: 4</b> dengan seberapa banyak data class yang anda gunakan <br><br>2. <b>fine_tune_checkpoint: "faster_rcnn_inception_v2_coco_2018_01_28/model.ckpt"</b> sesuaikan dengan folder yang digunakan<br><br>3. pada bagian <b>train_input_reader:</b> ubah folder <b>input_path:</b> menjadi <br><b>input_path: "data_master/train.record"<br>label_map_path: "data_master/training/labelmap.pbtxt"</b><br><br>4. Pada bagian eval_config sesuaikan jumlah data sample yang digunakan dalam proses training <br><b>num_examples: 20</b><br><br>5. Pada bagian eval_input_reader ubah <br><b>input_path: "data_master/test.record"<br>label_map_path: "data_master/training/labelmap.pbtxt"</b><br><br><br><pre class="brush: bash; tab-size: 4" id="tes">
+#
+
+python data_file/zzz_train.py --logtostderr --train_dir=data_master/training/ --pipeline_config_path=data_master/training/faster_rcnn_inception_v2_pets.config
+
+#
+</pre><br><br><br>pada saat training jika error module not found nets dan deployment solusinya copy folder net dan deployment di folder model/research/slim ke folder \tensorflow_1.15\Lib\site-packages lalu jalankan ulang perintah trainingnya<br><br> <br><br>Lalu Exprot Hasil Training angka xxx diganti dengan data training yang tersimpan<br><br><pre class="brush: bash; tab-size: 4" id="tes">
+#
+
+python export_inference_graph.py --input_type image_tensor --pipeline_config_path data_master/training/faster_rcnn_inception_v2_pets.config --trained_checkpoint_prefix data_master/training/model.ckpt-XXXX --output_directory data_master/inference_graph
+
+#
+</pre><br><br><br><h4> Hasil Training dan Persiapan Uji Coba Deteksi Object</h4><br><a href="https://www.youtube.com/watch?v=6zz9uUFf09" target="_blank">https://www.youtube.com/watch?v=O4NxLezwDNo</a><br><iframe width="650" height="420" src="https://www.youtube.com/watch?v=6zz9uUFf09" frameborder="0" allow=" encrypted-media" allowfullscreen></iframe><br><br><br>melihat data hasil traning models\research\object_detection<br><br><pre class="brush: bash; tab-size: 4" id="tes">#
+
+tensorboard --logdir=data_master\training
+
+#</pre><br><br><br>jalankan uji coba deteksi gambar<br>jika error module utils not found solusinya copy folder utils di object_detection/utils ke folder lib/site-packages<br><br><br><h4>Melihat Akurasi Object Detection dan Ujicoba Akhir Hasil Training</h4><br><a href="https://www.youtube.com/watch?v=-nA9KLzmtYw" target="_blank">https://www.youtube.com/watch?v=O4NxLezwDNo</a><br><iframe width="650" height="420" src="https://www.youtube.com/watch?v=-nA9KLzmtYw" frameborder="0" allow=" encrypted-media" allowfullscreen></iframe><br><br><br>  </div>				
+
+
+
+				
+				
+
+				
+				
+
+				
+				
+								<div id="menu_kanan">
+					<ul>
+						<li><a class="active" href="#">KATEGORI</a></li>
+												  <li><a href="https://gabutai.github.io/">Tensorflow (1)</a></li>
+						  
+					</ul>
+				</div>				<div id="ratakan"></div>
+
+				<div class="footer">
+				  <p>Copyright 2019 by <B>https://gabutai.github.io/</B></p>
+				</div>
+		</div>
+
+
 </body>
+
+
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
